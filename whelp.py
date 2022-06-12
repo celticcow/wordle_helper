@@ -19,13 +19,26 @@ def narrorw_word_list(word_list, position, letter):
 def apply_exclude_list(word_list, exclude_list):
     debug = 1
 
-    for exclude in exclude_list:
-        for word in word_list:
-            if(exclude in word):
-                word_list.remove(word)
-                print("remove " + word)
+    tmp_list = list()
+    first_run = 0
 
-    return(word_list)
+    for exclude in exclude_list:
+       
+        if(first_run == 0):
+            tmp_list = list()
+        else:
+            word_list = tmp_list
+            tmp_list = list()
+
+        for word in word_list:
+            first_run = 1
+            
+            if(exclude in word):
+                print("exclude : " + word)
+            else:
+                tmp_list.append(word)
+
+    return(tmp_list)
 #end of apply_exclude_list    
 
 def apply_include_list(word_list, include_list):
@@ -34,8 +47,11 @@ def apply_include_list(word_list, include_list):
 
     for include in include_list:
         for word in word_list:
+            
             if(include in word):
                 tmp_list.append(word)
+            else:
+                print("excluding : " + word)
     return(tmp_list)
 #end of apply_include_list
 
@@ -97,10 +113,16 @@ def main():
         include_add_list = input("add to include list with , sep : ")
 
         for item in exclude_add_list:
-            exclude_list.append(item)
+            if(item == ','):
+                pass
+            else:
+                exclude_list.append(item)
 
         for item in include_add_list:
-            include_list.append(item)
+            if(item == ','):
+                pass
+            else:
+                include_list.append(item)
 
         if(letter_1 != ''):
             working_list = narrorw_word_list(working_list, 0, letter_1)
@@ -114,8 +136,6 @@ def main():
         if(letter_5 != ''):
             working_list = narrorw_word_list(working_list, 4, letter_5)
 
-        #print(working_list)
-
         ex_display_list = apply_exclude_list(working_list, exclude_list)
 
         display_list = apply_include_list(ex_display_list, include_list)
@@ -127,9 +147,6 @@ def main():
 
         continue_loop = input("loop again ? (y/n) ")
 
-    ##print(len(word_list))
-
-    
 #end of main
 
 if __name__ == "__main__":
