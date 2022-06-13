@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Wordle Helper</title>
+        <style>
+            .borderexample {
+             border-style:solid;
+             border-color:#cf1931;
+            }
+            </style>
+    </head>
+    <body>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+        <h2>Wordle Helper</h2>
+        <br>
+        <form onsubmit="return false">
+            <label for="letter1">letter 1</label><br>
+            <input type="text" id="letter1"><br>
+
+            <label for="letter2">letter 2</label><br>
+            <input type="text" id="letter2"><br>
+
+            <label for="letter3">letter 3</label><br>
+            <input type="text" id="letter3"><br>
+
+            <label for="letter4">letter 4</label><br>
+            <input type="text" id="letter4"><br>
+
+            <label for="letter5">letter 5</label><br>
+            <input type="text" id="letter5"><br>
+
+            <label for="exclude">exclude list</label>
+            <input type="exclude list" id="exclude_list"><br>
+
+            <label for="include">include list</label>
+            <input type="include list" id="include_list"><br>
+            
+            <input pys-onClick="sub" type="submit" id="btn-form" value="submit">
+        </form>
+
+        <p>possible words:</p>
+        <p id="output"></p>
+
+        <py-script>
+
+            def sub(*args, **kwargs):
+                result_place = Element('output')
+                result_place.write(Element('letter5').value )
+
+
+        </py-script>
+    </body>
+</html>
