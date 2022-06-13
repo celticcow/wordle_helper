@@ -118,7 +118,7 @@ def main():
 
         ex_display_list = apply_exclude_list(working_list, exclude_list)
 
-        display_list = apply_include_list(ex_display_list, include_list)
+        display_list    = apply_include_list(ex_display_list, include_list)
 
 
         print(display_list)
