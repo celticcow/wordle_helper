@@ -52,7 +52,11 @@ def apply_include_list(word_list, include_list):
                 tmp_list.append(word)
             else:
                 print("excluding : " + word)
-    return(tmp_list)
+        
+        word_list = tmp_list
+        tmp_list = list()
+    #return(tmp_list)
+    return(word_list)
 #end of apply_include_list
 
 def main():
