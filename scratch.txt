@@ -1,0 +1,14 @@
+BE as T
+audio
+
+match b and e as proper place  
+T as include
+as as exclude
+
+audio no matches and exclude
+
+word was berth
+
+first one word list
+
+['berth', 'betel', 'beget', 'befit', 'beret']

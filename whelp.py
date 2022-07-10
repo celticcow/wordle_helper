@@ -59,6 +59,12 @@ def apply_include_list(word_list, include_list):
     return(word_list)
 #end of apply_include_list
 
+def recommend_word(word_list):
+    debug = 1
+
+
+#end of recommend_word
+
 def main():
     print("helper")
     debug = 1
